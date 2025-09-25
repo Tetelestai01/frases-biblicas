@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
   <title>Frase Bíblica do Dia</title>
   <style>
     body {
@@ -9,7 +10,7 @@
       background: #0d0d0d; /* Preto de fundo */
       color: #fff;
       text-align: center;
-      padding: 50px;
+      padding: 50px 20px;
       margin: 0;
       overflow-x: hidden;
     }
@@ -62,6 +63,7 @@
       position: absolute;
       border: 3px solid #e50914;
       opacity: 0.2;
+      z-index: -1;
     }
 
     .circle {
@@ -98,6 +100,63 @@
       transform: rotate(-45deg);
     }
 
+    /* Responsividade */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 28px;
+        padding: 8px 15px;
+      }
+
+      #frase {
+        font-size: 18px;
+        padding: 15px;
+        margin: 30px auto;
+        max-width: 90%;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 12px 25px;
+      }
+
+      .circle {
+        width: 120px;
+        height: 120px;
+      }
+
+      .line {
+        width: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 30px 15px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      #frase {
+        font-size: 16px;
+        padding: 12px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      .circle {
+        width: 80px;
+        height: 80px;
+      }
+
+      .line {
+        width: 100px;
+      }
+    }
   </style>
 </head>
 <body>
