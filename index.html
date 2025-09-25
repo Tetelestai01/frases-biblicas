@@ -2,69 +2,58 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
   <title>Frase Bíblica do Dia</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #0d0d0d; /* Preto de fundo */
+      background: #0d0d0d; /* fundo preto */
       color: #fff;
       text-align: center;
       padding: 50px 20px;
       margin: 0;
       overflow-x: hidden;
-      position: relative; /* garante que z-index -1 funcione */
+    }
+
+    main {
+      position: relative;
+      z-index: 1; /* conteúdo principal sempre na frente */
     }
 
     h1 {
-      font-size: 42px;
-      color: #ffffff;
-      font-weight: bold;
-      text-transform: uppercase;
-      background: #e50914;
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(229, 9, 20, 0.7);
+      font-size: 40px;
+      color: #fff;
+      margin-bottom: 20px;
     }
 
     #frase {
-      margin: 40px auto;
+      margin: 30px auto;
       font-size: 22px;
-      color: #ffffff;
-      max-width: 700px;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border: 2px solid #e50914;
-      border-radius: 12px;
+      color: #f2f2f2;
+      max-width: 600px;
       line-height: 1.5;
     }
 
     button {
-      padding: 15px 30px;
+      padding: 12px 25px;
       font-size: 18px;
-      font-weight: bold;
-      background: #e50914;
+      background: #e50914; /* vermelho destaque */
       color: white;
       border: none;
-      border-radius: 30px;
+      border-radius: 5px;
       cursor: pointer;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+      font-weight: bold;
     }
 
     button:hover {
       background: #b20710;
-      transform: scale(1.05);
     }
 
-    /* Efeitos geométricos do fundo */
+    /* Decorações */
     .decor {
       position: absolute;
       border: 3px solid #e50914;
       opacity: 0.2;
-      z-index: -1; /* ficam atrás do conteúdo */
+      pointer-events: none; /* não atrapalha cliques */
     }
 
     .circle {
@@ -74,30 +63,30 @@
     }
 
     .line {
-      width: 250px;
-      height: 5px;
+      width: 150px;
+      height: 20px;
       background: #e50914;
     }
 
-    .circle.top-left {
-      top: -50px;
-      left: -50px;
+    .top-left {
+      top: 20px;
+      left: 20px;
     }
 
-    .circle.bottom-right {
-      bottom: -80px;
-      right: -80px;
+    .bottom-right {
+      bottom: 20px;
+      right: 20px;
     }
 
-    .line.top-right {
-      top: 100px;
-      right: -80px;
+    .top-right {
+      top: 50px;
+      right: 40px;
       transform: rotate(45deg);
     }
 
-    .line.bottom-left {
-      bottom: 120px;
-      left: -80px;
+    .bottom-left {
+      bottom: 50px;
+      left: 40px;
       transform: rotate(-45deg);
     }
 
@@ -105,71 +94,31 @@
     @media (max-width: 768px) {
       h1 {
         font-size: 28px;
-        padding: 8px 15px;
       }
-
       #frase {
         font-size: 18px;
-        padding: 15px;
-        margin: 30px auto;
-        max-width: 90%;
+        padding: 8px 15px;
       }
-
-      button {
-        font-size: 16px;
-        padding: 12px 25px;
-      }
-
       .circle {
         width: 120px;
         height: 120px;
-      }
-
-      .line {
-        width: 150px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      body {
-        padding: 30px 15px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      #frase {
-        font-size: 16px;
-        padding: 12px;
-      }
-
-      button {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
-
-      .circle {
-        width: 80px;
-        height: 80px;
-      }
-
-      .line {
-        width: 100px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Decorações de fundo -->
+  <!-- Decorações -->
   <div class="decor circle top-left"></div>
   <div class="decor circle bottom-right"></div>
   <div class="decor line top-right"></div>
   <div class="decor line bottom-left"></div>
 
-  <h1>Frase Bíblica do Dia</h1>
-  <div id="frase">Clique no botão para receber uma mensagem inspiradora.</div>
-  <button onclick="sortear()">Sortear Frase</button>
+  <!-- Conteúdo principal -->
+  <main>
+    <h1>Frase Bíblica do Dia</h1>
+    <div id="frase">Clique no botão para receber uma mensagem inspiradora.</div>
+    <button onclick="sortear()">Sortear Frase</button>
+  </main>
 
   <script>
     const frases = [
