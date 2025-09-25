@@ -13,6 +13,7 @@
       padding: 50px 20px;
       margin: 0;
       overflow-x: hidden;
+      position: relative; /* garante que z-index -1 funcione */
     }
 
     h1 {
@@ -63,7 +64,7 @@
       position: absolute;
       border: 3px solid #e50914;
       opacity: 0.2;
-      z-index: -1;
+      z-index: -1; /* ficam atrás do conteúdo */
     }
 
     .circle {
